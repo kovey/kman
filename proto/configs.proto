@@ -1,0 +1,67 @@
+syntax = "proto3";
+option go_package = "./proto";
+
+message ConfigAddReq {
+    string name = 1;
+    string value = 2;
+    string key = 3;
+    string namespace = 4;
+    int32 projectId = 5;
+}
+
+message ConfigAddResp {
+}
+
+message ConfigEditReq {
+    int64 id = 1;
+    string value = 2;
+    string namespace = 3;
+    int32 projectId = 4;
+}
+
+message ConfigEditResp {
+}
+
+message ConfigReleaseReq {
+    repeated int64 ids = 1;
+    string namespace = 2;
+    int32 projectId = 3;
+}
+
+message ConfigReleaseResp {
+}
+
+message ConfigListReq {
+    int64 page = 1;
+    int64 pageSize = 2;
+    string key = 3;
+    string namespace = 4;
+    int32 projectId = 5;
+}
+
+message ConfigInfo {
+	int64 id          = 1; 
+	string key        = 2;
+	string value      = 3;
+	string history1   = 4;
+	string history2   = 5;
+	string name       = 6;
+	string updateTime = 7;
+	string createTime = 8;
+	string status     = 9;
+}
+
+message ConfigListResp {
+	int64 page        = 1;
+	int64 pageSize    = 2;
+	int64 totalPage   = 3;
+	int64 totalCount  = 4;
+	repeated ConfigInfo list = 5;
+}
+
+service Config {
+    rpc Add(ConfigAddReq) returns (ConfigAddResp) {}
+    rpc Edit(ConfigEditReq) returns (ConfigEditResp) {}
+    rpc Release(ConfigReleaseReq) returns (ConfigReleaseResp) {}
+    rpc List(ConfigListReq) returns (ConfigListResp) {}
+}

@@ -1,0 +1,54 @@
+syntax = "proto3";
+option go_package = "./proto";
+
+message NodeEditReq {
+    string node = 1;
+    int64 weight = 2;
+    string namespace = 3;
+    int32 projectId = 4;
+}
+
+message NodeEditResp {
+}
+
+message NodeDeleteReq {
+    string node = 1;
+    string namespace = 2;
+    int32 projectId = 3;
+}
+
+message NodeDeleteResp {
+}
+
+message NodeListReq {
+    int64 page = 1;
+    int64 pageSize = 2;
+    string node = 3;
+    string namespace = 4;
+    int32 projectId = 5;
+}
+
+message NodeInfo {
+	string node      = 1; 
+	string name      = 2;
+	string namespace = 3;
+	string groupName = 4;
+	int64 weight     = 5;
+	string version   = 6;
+	string host      = 7;
+	string port      = 8;
+}
+
+message NodeListResp {
+	int64 page        = 1;
+	int64 pageSize    = 2;
+	int64 totalPage   = 3;
+	int64 totalCount  = 4;
+	repeated NodeInfo list = 5;
+}
+
+service Node {
+    rpc Edit(NodeEditReq) returns (NodeEditResp) {}
+    rpc Delete(NodeDeleteReq) returns (NodeDeleteResp) {}
+    rpc List(NodeListReq) returns (NodeListResp) {}
+}

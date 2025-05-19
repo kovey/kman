@@ -1,0 +1,4 @@
+#!/bin/bash
+
+protoc --go_out=../web/module/libs --go-grpc_out=../web/module/libs *.proto
+protoc --go_out=../service/module/libs --go-grpc_out=../service/module/libs *.proto

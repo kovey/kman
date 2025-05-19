@@ -1,0 +1,47 @@
+syntax = "proto3";
+option go_package = "./proto";
+
+message ProjectAddReq {
+    string name      = 1;
+    string namespace = 2;
+}
+
+message ProjectAddResp {
+}
+
+
+message ProjectEditReq {
+    string name = 1;
+    int64 id    = 2;
+}
+
+message ProjectEditResp {
+}
+
+message ProjectListReq {
+    int64 page     = 1;
+    int64 pageSize = 2;
+    string name    = 3;
+}
+
+message ProjectInfo {
+	int32 id         = 1; 
+	string name       = 2;
+	string namespace  = 3;
+	string createTime = 4;
+	string openId     = 5;
+}
+
+message ProjectListResp {
+	int64 page        = 1;
+	int64 pageSize    = 2;
+	int64 totalPage   = 3;
+	int64 totalCount  = 4;
+	repeated ProjectInfo list = 5;
+}
+
+service Project {
+    rpc Add(ProjectAddReq) returns (ProjectAddResp) {}
+    rpc Edit(ProjectEditReq) returns (ProjectEditResp) {}
+    rpc List(ProjectListReq) returns (ProjectListResp) {}
+}

@@ -1,0 +1,4 @@
+version: 3
+database:
+  name: test
+  password: 123456asda
