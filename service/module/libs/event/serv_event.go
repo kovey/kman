@@ -14,7 +14,8 @@ import (
 type ServEvent struct {
 }
 
-func (s *ServEvent) OnFlag(app.AppInterface) error {
+func (s *ServEvent) OnFlag(a app.AppInterface) error {
+	a.Flag("create", "", app.TYPE_STRING, "create config .env file")
 	return nil
 }
 

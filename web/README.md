@@ -1,3 +1,11 @@
+## web api of kman
+#### Description
+###### web api service
+###### Usage
+    go install github.com/kovey/kman/web
+###### Configs
+    create .env file
+``` env
 # kow config
 APP_NAME       = shop
 APP_TIME_ZONE  = Asia/Shanghai
@@ -32,3 +40,4 @@ DB_USER     = root
 DB_PASSWORD = 123456
 DB_NAME     = kman
 DB_CHARSET  = utf8mb4
+```
