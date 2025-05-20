@@ -7,12 +7,15 @@ import (
 
 	"github.com/go-sql-driver/mysql"
 	"github.com/kovey/cli-go/app"
+	"github.com/kovey/cli-go/util"
 	"github.com/kovey/db-go/v3/db"
 	"github.com/kovey/discovery/algorithm"
 	"github.com/kovey/discovery/krpc"
+	"github.com/kovey/kow/serv"
 )
 
 type ServEvent struct {
+	*serv.EventBase
 }
 
 func (s *ServEvent) OnFlag(app.AppInterface) error {
@@ -58,4 +61,13 @@ func (s *ServEvent) OnRun() error {
 
 func (s *ServEvent) OnShutdown() {
 	db.Close()
+}
+
+func (s *ServEvent) CreateConfig(app.AppInterface) error {
+	filePath := fmt.Sprintf("%s/.env", util.RunDir())
+	if util.IsFile(filePath) {
+		return fmt.Errorf("[%s] is exists", filePath)
+	}
+
+	return os.WriteFile(filePath, []byte(env_config), 0644)
 }

@@ -1,4 +1,7 @@
-# kow config
+package event
+
+const (
+	env_config = `# kow config
 APP_NAME       = shop
 APP_TIME_ZONE  = Asia/Shanghai
 APP_PPROF_OPEN = true
@@ -44,4 +47,5 @@ DB_CHARSET  = utf8mb4
 
 # admin account
 ACCT_ADMIN    = administrator@admin
-ACCT_PASSWORD = 123456
+ACCT_PASSWORD = 123456`
+)
