@@ -3,18 +3,15 @@ module github.com/kovey/kman/web
 go 1.22.3
 
 require (
-	github.com/go-sql-driver/mysql v1.9.2
-	github.com/kovey/cli-go v1.2.2
-	github.com/kovey/db-go/v3 v3.1.7
+	github.com/kovey/cli-go v1.2.7
 	github.com/kovey/discovery v0.1.1
-	github.com/kovey/kow v0.2.1
+	github.com/kovey/kow v0.2.4
 	github.com/stretchr/testify v1.10.0
 	google.golang.org/grpc v1.64.0
 	google.golang.org/protobuf v1.33.0
 )
 
 require (
-	filippo.io/edwards25519 v1.1.0 // indirect
 	github.com/coreos/go-semver v0.3.0 // indirect
 	github.com/coreos/go-systemd/v22 v22.3.2 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect

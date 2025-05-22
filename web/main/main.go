@@ -10,5 +10,5 @@ import (
 
 func main() {
 	kow.SetMaxRunTime(10 * time.Second)
-	kow.Run(&event.ServEvent{})
+	kow.Run(event.NewServEvent())
 }

@@ -2,7 +2,7 @@ package event
 
 const (
 	env_config = `# kow config
-APP_NAME       = shop
+APP_NAME       = kman
 APP_TIME_ZONE  = Asia/Shanghai
 APP_PPROF_OPEN = true
 APP_ETCD_OPEN  = false
@@ -32,18 +32,6 @@ ETCD_NAMESPACE = default
 # service
 SERVICE_NAME  = kman-service
 SERVICE_GROUP = default
-
-# models path
-MODELS_PATH   = module/models
-
-# database config
-DB_DRIVER   = mysql
-DB_HOST     = 127.0.0.1
-DB_PORT     = 3306
-DB_USER     = root
-DB_PASSWORD = 123456
-DB_NAME     = kman
-DB_CHARSET  = utf8mb4
 
 # admin account
 ACCT_ADMIN    = administrator@admin
