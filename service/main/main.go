@@ -7,5 +7,5 @@ import (
 )
 
 func main() {
-	server.Run(&event.ServEvent{})
+	server.Run(event.NewServEvent())
 }
