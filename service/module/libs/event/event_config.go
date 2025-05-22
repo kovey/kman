@@ -1,4 +1,7 @@
-# kom config
+package event
+
+const (
+	env_config = `# kom config
 APP_NAME       = kman
 APP_TIME_ZONE  = Asia/Shanghai
 APP_PPROF_OPEN = true
@@ -36,4 +39,5 @@ SERV_TTL     = 10
 SERV_NAME    = kom 
 SERV_GROUP   = default 
 SERV_WEIGHT  = 1 
-SERV_VERSION = 1.0.0
+SERV_VERSION = 1.0.0`
+)

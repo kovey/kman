@@ -7,15 +7,21 @@ import (
 
 	"github.com/go-sql-driver/mysql"
 	"github.com/kovey/cli-go/app"
+	"github.com/kovey/cli-go/util"
 	"github.com/kovey/db-go/v3/db"
 	"github.com/kovey/kman/service/module/libs/etcd"
+	"github.com/kovey/kom/server"
 )
 
 type ServEvent struct {
+	*server.EventBase
+}
+
+func NewServEvent() *ServEvent {
+	return &ServEvent{EventBase: &server.EventBase{}}
 }
 
 func (s *ServEvent) OnFlag(a app.AppInterface) error {
-	a.Flag("create", "", app.TYPE_STRING, "create config .env file")
 	return nil
 }
 
@@ -58,4 +64,13 @@ func (s *ServEvent) OnRun() error {
 func (s *ServEvent) OnShutdown() {
 	db.Close()
 	etcd.Close()
+}
+
+func (s *ServEvent) CreateConfig(path string) error {
+	filePath := fmt.Sprintf("%s/.env", path)
+	if util.IsFile(filePath) {
+		return fmt.Errorf("[%s] is exists", filePath)
+	}
+
+	return os.WriteFile(filePath, []byte(env_config), 0644)
 }
