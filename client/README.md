@@ -2,7 +2,7 @@
 #### Description
 ###### kman client
 ###### Usage
-    go install github.com/kovey/kman/kman-client
+    go install github.com/kovey/kman/client
 ###### Configs
     create .env file
 ``` env
