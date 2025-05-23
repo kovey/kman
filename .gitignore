@@ -1,5 +1,2 @@
 .env
-kman-web
-kman-service
-kman-client
 tests
