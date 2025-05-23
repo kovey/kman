@@ -7,7 +7,7 @@
 
 ###### kman-sdk
 ###### Usage
-    go get -u github.com/kovey/kman/web/sdk
+    go get -u github.com/kovey/kman/sdk
 
 ###### kman-client
 ###### Usage
