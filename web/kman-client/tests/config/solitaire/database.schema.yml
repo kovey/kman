@@ -1,4 +1,0 @@
-version: 3
-database:
-  name: #{db.name}
-  password: #{db.password}
