@@ -11,4 +11,4 @@
 
 ###### kman-client
 ###### Usage
-    go install github.com/kovey/kman/web/kman-client
+    go install github.com/kovey/kman/client
