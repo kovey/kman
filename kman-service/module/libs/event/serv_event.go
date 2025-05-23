@@ -74,3 +74,7 @@ func (s *ServEvent) CreateConfig(path string) error {
 
 	return os.WriteFile(filePath, []byte(env_config), 0644)
 }
+
+func (s *ServEvent) AppName() string {
+	return "kman-service"
+}

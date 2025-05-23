@@ -3,9 +3,9 @@ module github.com/kovey/kman/kman-web
 go 1.22.3
 
 require (
-	github.com/kovey/cli-go v1.2.8
+	github.com/kovey/cli-go v1.2.10
 	github.com/kovey/discovery v0.1.1
-	github.com/kovey/kow v0.2.6
+	github.com/kovey/kow v0.2.7
 	github.com/stretchr/testify v1.10.0
 	google.golang.org/grpc v1.64.0
 	google.golang.org/protobuf v1.33.0
