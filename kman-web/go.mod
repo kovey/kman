@@ -3,7 +3,7 @@ module github.com/kovey/kman/kman-web
 go 1.22.3
 
 require (
-	github.com/kovey/cli-go v1.2.13
+	github.com/kovey/cli-go v1.2.14
 	github.com/kovey/discovery v0.1.1
 	github.com/kovey/kow v0.2.11
 	github.com/stretchr/testify v1.10.0
