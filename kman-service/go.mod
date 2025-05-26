@@ -6,7 +6,7 @@ toolchain go1.23.9
 
 require (
 	github.com/go-sql-driver/mysql v1.9.2
-	github.com/kovey/cli-go v1.2.11
+	github.com/kovey/cli-go v1.2.12
 	github.com/kovey/db-go/v3 v3.1.7
 	github.com/kovey/discovery v0.1.2
 	github.com/kovey/kom v0.2.5
@@ -22,7 +22,7 @@ require (
 	github.com/coreos/go-systemd/v22 v22.3.2 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/golang/protobuf v1.5.4 // indirect
-	github.com/kovey/debug-go v0.0.6 // indirect
+	github.com/kovey/debug-go v0.1.1 // indirect
 	go.etcd.io/etcd/api/v3 v3.5.21 // indirect
 	go.etcd.io/etcd/client/pkg/v3 v3.5.21 // indirect
 	go.uber.org/multierr v1.10.0 // indirect

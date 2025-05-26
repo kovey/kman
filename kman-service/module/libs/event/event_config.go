@@ -12,13 +12,17 @@ APP_NODE_ID    = 1001
 # debug
 DEBUG_LEVEL     = info
 DEBUG_SHOW_FILE = 1
+# if On async open
+DEBUG_ASYNC_OPEN = Off
+LOG_DIR          =
+LOG_MAX          = 1024
 
 # etcd
-ETCD_ENDPOINTS = 172.16.26.155:2379
+ETCD_ENDPOINTS = 127.0.0.1:2379
 ETCD_TIMEOUT   = 30
 ETCD_USERNAME  = 
 ETCD_PASSWORD  =
-ETCD_NAMESPACE = default
+ETCD_NAMESPACE = ko-man
 
 # database config
 DB_DRIVER   = mysql
@@ -36,7 +40,7 @@ MODELS_PATH   = module/models
 SERV_HOST    = 0.0.0.0
 SERV_PORT    = 8081
 SERV_TTL     = 10
-SERV_NAME    = kom 
+SERV_NAME    = kman-service
 SERV_GROUP   = default 
 SERV_WEIGHT  = 1 
 SERV_VERSION = 1.0.0`

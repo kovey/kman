@@ -17,6 +17,10 @@ JWT_REFRESH_EXPIRE = 8640000
 # debug
 DEBUG_LEVEL     = info
 DEBUG_SHOW_FILE = 1
+# if On async open
+DEBUG_ASYNC_OPEN = Off
+LOG_DIR          =
+LOG_MAX          = 1024
 
 # listen
 SERV_HOST = 0.0.0.0
@@ -27,7 +31,7 @@ ETCD_ENDPOINTS = 127.0.0.1:2379
 ETCD_TIMEOUT   = 30
 ETCD_USERNAME  = 
 ETCD_PASSWORD  =
-ETCD_NAMESPACE = default
+ETCD_NAMESPACE = ko-man
 
 # service
 SERVICE_NAME  = kman-service
