@@ -2,7 +2,7 @@ module github.com/kovey/kman/kman-client
 
 go 1.22.3
 
-require github.com/kovey/cli-go v1.2.10
+require github.com/kovey/cli-go v1.2.11
 
 require (
 	github.com/kovey/debug-go v0.0.6
