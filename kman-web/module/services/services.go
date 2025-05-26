@@ -51,7 +51,7 @@ func Refresh() RefreshInterface {
 }
 
 func Operator() OperatorInterface {
-	return &operator.Operator{}
+	return operator.NewOperator()
 }
 
 func Nodes() NodesInterface {
@@ -59,7 +59,7 @@ func Nodes() NodesInterface {
 }
 
 func Project() ProjectInterface {
-	return &project.Project{}
+	return project.NewProject()
 }
 
 func Config() ConfigInterface {
