@@ -44,7 +44,6 @@ func _init() error {
 			return err
 		}
 
-		fmt.Println(prefix, resp.Kvs)
 		for _, kv := range resp.Kvs {
 			key := strings.ReplaceAll(string(kv.Key), prefix+"/", "")
 			cache.Add(ns, key, string(kv.Value))
