@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"github.com/kovey/cli-go/app"
+	"github.com/kovey/cli-go/gui"
 	"github.com/kovey/cli-go/util"
 	"github.com/kovey/discovery/algorithm"
 	"github.com/kovey/discovery/krpc"
@@ -42,10 +43,17 @@ func (s *ServEvent) OnShutdown() {
 func (s *ServEvent) CreateConfig(path string) error {
 	filePath := fmt.Sprintf("%s/.env", path)
 	if util.IsFile(filePath) {
+		gui.PrintlnFailure(`create "%s" config file`, filePath)
 		return fmt.Errorf("[%s] is exists", filePath)
 	}
 
-	return os.WriteFile(filePath, []byte(env_config), 0644)
+	if err := os.WriteFile(filePath, []byte(env_config), 0644); err != nil {
+		gui.PrintlnFailure(`create "%s" config file`, filePath)
+		return err
+	}
+
+	gui.PrintlnOk(`create "%s" config file`, filePath)
+	return nil
 }
 
 func (s *ServEvent) AppName() string {

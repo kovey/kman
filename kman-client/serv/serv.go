@@ -8,6 +8,7 @@ import (
 
 	"github.com/kovey/cli-go/app"
 	"github.com/kovey/cli-go/env"
+	"github.com/kovey/cli-go/gui"
 	"github.com/kovey/cli-go/util"
 	"github.com/kovey/debug-go/debug"
 	"github.com/kovey/kman/kman-client/cache"
@@ -93,7 +94,12 @@ func (s *serv) config(a app.AppInterface) error {
 			return fmt.Errorf(".env is exists")
 		}
 
-		return os.WriteFile(".env", []byte(env_config), 0644)
+		if err := os.WriteFile(".env", []byte(env_config), 0644); err != nil {
+			gui.PrintlnFailure("create .env config file")
+			return err
+		}
+
+		gui.PrintlnOk("create .env config file")
 	}
 
 	return fmt.Errorf("options is empty")
@@ -129,7 +135,7 @@ func (s *serv) cache(a app.AppInterface) error {
 			return fmt.Errorf("%s of %s not found", key, name)
 		}
 
-		fmt.Printf("%s.%s: %s\n", name, key, m.Value)
+		gui.PrintlnOk("%s.%s: %s", name, key, m.Value)
 		return nil
 	}
 
