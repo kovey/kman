@@ -5,9 +5,9 @@ go 1.23.0
 toolchain go1.23.9
 
 require (
-	github.com/kovey/cli-go v1.2.15
+	github.com/kovey/cli-go v1.2.16
 	github.com/kovey/discovery v0.1.1
-	github.com/kovey/kow v0.2.12
+	github.com/kovey/kow v0.2.13
 	github.com/stretchr/testify v1.10.0
 	google.golang.org/grpc v1.64.0
 	google.golang.org/protobuf v1.33.0
