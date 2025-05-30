@@ -86,7 +86,8 @@ func (s *serv) config(a app.AppInterface) error {
 			}
 		}
 
-		return fmt.Errorf("editor not install, please install one of [%s]", strings.Join(commands, ","))
+		gui.PrintlnFailure("editor not install, please install one of [%s]", strings.Join(commands, ","))
+		return nil
 	}
 
 	if f, _ := a.Get("config", "c"); f.IsInput() {
@@ -100,9 +101,11 @@ func (s *serv) config(a app.AppInterface) error {
 		}
 
 		gui.PrintlnOk("create .env config file")
+		return nil
 	}
 
-	return fmt.Errorf("options is empty")
+	gui.PrintlnFailure("options is empty")
+	return nil
 }
 
 func (s *serv) cache(a app.AppInterface) error {
@@ -119,27 +122,32 @@ func (s *serv) cache(a app.AppInterface) error {
 	case "get":
 		name, _ := a.Get("cache", "get", "name")
 		if !name.IsInput() {
-			return fmt.Errorf("--name not input")
+			gui.PrintlnFailure("--name not input")
+			return nil
 		}
 		key, _ := a.Get("cache", "get", "key")
 		if !key.IsInput() {
-			return fmt.Errorf("--key not input")
+			gui.PrintlnFailure("--key not input")
+			return nil
 		}
 
 		if err := cache.LoadFromCache(name.String()); err != nil {
-			return err
+			gui.PrintlnFailure(err.Error())
+			return nil
 		}
 
 		m := cache.Get(name.String(), key.String())
 		if m == nil {
-			return fmt.Errorf("%s of %s not found", key, name)
+			gui.PrintlnFailure("%s of %s not found", key, name)
+			return nil
 		}
 
 		gui.PrintlnOk("%s.%s: %s", name, key, m.Value)
 		return nil
 	}
 
-	return fmt.Errorf("command of cache is empty")
+	gui.PrintlnFailure("command of cache is empty")
+	return nil
 }
 
 func (s *serv) Run(a app.AppInterface) error {
