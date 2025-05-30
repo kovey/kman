@@ -92,7 +92,8 @@ func (s *serv) config(a app.AppInterface) error {
 
 	if f, _ := a.Get("config", "c"); f.IsInput() {
 		if util.IsFile(".env") {
-			return fmt.Errorf(".env is exists")
+			gui.PrintlnFailure(".env is exists")
+			return nil
 		}
 
 		if err := os.WriteFile(".env", []byte(env_config), 0644); err != nil {
