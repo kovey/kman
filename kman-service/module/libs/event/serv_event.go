@@ -10,6 +10,7 @@ import (
 	"github.com/kovey/cli-go/gui"
 	"github.com/kovey/cli-go/util"
 	"github.com/kovey/db-go/v3/db"
+	"github.com/kovey/db-go/v3/logger"
 	"github.com/kovey/kman/kman-service/module/libs/etcd"
 	"github.com/kovey/kom/server"
 )
@@ -49,6 +50,10 @@ func (s *ServEvent) initMysql() error {
 func (s *ServEvent) OnBefore(app.AppInterface) error {
 	if err := s.initMysql(); err != nil {
 		return err
+	}
+
+	if os.Getenv("DEBUG_ASYNC_OPEN") == "On" {
+		logger.UseFile(os.Getenv("LOG_DIR"))
 	}
 
 	return etcd.Init()
