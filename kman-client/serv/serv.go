@@ -173,6 +173,10 @@ func (s *serv) Shutdown(app.AppInterface) error {
 	return nil
 }
 
+func (s *serv) Version() string {
+	return "0.1.5"
+}
+
 func Run() {
 	cli := app.NewApp("kman-client")
 	cli.SetServ(&serv{})

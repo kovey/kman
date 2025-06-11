@@ -6,7 +6,7 @@ toolchain go1.23.9
 
 require (
 	github.com/go-sql-driver/mysql v1.9.2
-	github.com/kovey/cli-go v1.2.18
+	github.com/kovey/cli-go v1.2.20
 	github.com/kovey/db-go/v3 v3.1.8
 	github.com/kovey/debug-go v0.1.3
 	github.com/kovey/discovery v0.1.2

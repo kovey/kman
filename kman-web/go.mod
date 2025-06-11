@@ -5,7 +5,7 @@ go 1.23.0
 toolchain go1.23.9
 
 require (
-	github.com/kovey/cli-go v1.2.18
+	github.com/kovey/cli-go v1.2.20
 	github.com/kovey/debug-go v0.1.3
 	github.com/kovey/discovery v0.1.1
 	github.com/kovey/kow v0.2.15
