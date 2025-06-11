@@ -17,6 +17,7 @@ JWT_REFRESH_EXPIRE = 8640000
 # debug
 DEBUG_LEVEL     = info
 DEBUG_SHOW_FILE = 1
+DEBUG_FORMAT    = json
 # if On async open
 DEBUG_ASYNC_OPEN = Off
 LOG_DIR          =

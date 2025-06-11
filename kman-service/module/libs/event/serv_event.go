@@ -11,6 +11,7 @@ import (
 	"github.com/kovey/cli-go/util"
 	"github.com/kovey/db-go/v3/db"
 	"github.com/kovey/db-go/v3/logger"
+	"github.com/kovey/debug-go/debug"
 	"github.com/kovey/kman/kman-service/module/libs/etcd"
 	"github.com/kovey/kom/server"
 )
@@ -54,6 +55,9 @@ func (s *ServEvent) OnBefore(app.AppInterface) error {
 
 	if os.Getenv("DEBUG_ASYNC_OPEN") == "On" {
 		logger.UseFile(os.Getenv("LOG_DIR"))
+	}
+	if os.Getenv("DEBUG_FORMAT") == "json" {
+		debug.UseJsonFormat()
 	}
 
 	return etcd.Init()

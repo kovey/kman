@@ -7,6 +7,7 @@ import (
 	"github.com/kovey/cli-go/app"
 	"github.com/kovey/cli-go/gui"
 	"github.com/kovey/cli-go/util"
+	"github.com/kovey/debug-go/debug"
 	"github.com/kovey/discovery/algorithm"
 	"github.com/kovey/discovery/krpc"
 	"github.com/kovey/kow/serv"
@@ -26,6 +27,9 @@ func (s *ServEvent) OnFlag(app.AppInterface) error {
 
 func (s *ServEvent) OnBefore(app.AppInterface) error {
 	krpc.SetLoadBalance(algorithm.Alg_Random_Weight)
+	if os.Getenv("DEBUG_FORMAT") == "json" {
+		debug.UseJsonFormat()
+	}
 	return nil
 }
 
