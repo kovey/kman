@@ -8,7 +8,7 @@ require (
 	github.com/kovey/cli-go v1.2.20
 	github.com/kovey/debug-go v0.1.3
 	github.com/kovey/discovery v0.1.1
-	github.com/kovey/kow v0.2.15
+	github.com/kovey/kow v0.2.16
 	github.com/stretchr/testify v1.10.0
 	google.golang.org/grpc v1.64.0
 	google.golang.org/protobuf v1.33.0
